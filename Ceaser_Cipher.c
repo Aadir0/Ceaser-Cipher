@@ -1,28 +1,21 @@
 #include <stdio.h>
-// To use the isupper and islower functions
 #include <ctype.h>
-//It allows us to use time(NULL) to show current time
-#include <time.h>
-//It allows us to use rand() and srand()
-#include <stdlib.h>
 
 void encrypt(char text[], int shift);
 void decrypt(char text[], int shift);
 
 int main()
 {
-    srand((unsigned int)time(NULL));        // To seed random number generator
-    int shift = (rand() % 25) + 1;          // To get random number and use it
-
-    // Here we can enter total of 399 character long message.
+    //Here we can enter total of 399 character long message.
     char text[400];
+    int shift;
 
     printf("Enter the message: ");
     // fgets reads the entire message even with spaces but scanf stops at spaces.
     fgets(text, sizeof(text), stdin);
 
-    printf("The shift value: %d\n", shift);
-    // scanf("%d", &shift);
+    printf("Enter shift value: ");
+    scanf("%d", &shift);
 
     // To encrypt the text it will automatically modifies the text as per the given function criteria.
     encrypt(text, shift);
