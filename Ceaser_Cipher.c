@@ -16,6 +16,7 @@ int main()
 
     printf("Enter shift value: ");
     scanf("%d", &shift);
+    shift = shift % 26; // To handle shift greater than 26.
 
     // To encrypt the text it will automatically modifies the text as per the given function criteria.
     encrypt(text, shift);
